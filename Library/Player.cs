@@ -8,8 +8,8 @@ namespace Library
         string surname;
         ERole role;
 
-        public enum ERole 
-        { 
+        public enum ERole
+        {
             Rosa,
             Riserva
         }
@@ -26,7 +26,8 @@ namespace Library
         }
 
         public ERole Role { get; }
-        }
+
+        
 
     }
 }

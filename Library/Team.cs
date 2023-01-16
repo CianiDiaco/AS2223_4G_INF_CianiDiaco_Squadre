@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,10 +26,14 @@ namespace Library
         /// </summary>
         const int MAX_RISERVA_PLAYERS = 3;
         const int MAX_ROSA_PLAYERS = 11;
+        int riserva, rosa;
 
         public Team(string name)
         {
             this.name = name;   
+            players = new List<Player>();
+            riserva = 0;
+            rosa = 0;
         }
 
         /// <summary>
@@ -40,7 +45,21 @@ namespace Library
         /// <returns>True if player has been inserted</returns>
         public bool AddPlayer(Player player)
         {
-            
+            if ((int)player.Role == 0 && MAX_ROSA_PLAYERS > rosa)
+            {
+                players.Add(player);
+                rosa++;
+                return true;
+            }
+            else if ((int)player.Role == 1 && MAX_ROSA_PLAYERS > riserva)
+            {
+                players.Add(player);
+                riserva++;
+                return true;
+            }
+            else
+                return false;
+
         }
 
         /// <summary>
@@ -69,12 +88,12 @@ namespace Library
         /// <returns></returns>
         public string GetPlayers()
         {
-            string playerList = "";
+            string pList = "";
             foreach (Player player in players) 
             {
-                playerList += $"Giocatore: {player.Description()} - Ruolo: {player.Role()}";
+                pList += $"Giocatore: {player.Description()} - Ruolo: {player.Role()}";
             }
-            return playerList;
+            return pList;
         }
 
         public string Name { get { return name; } }

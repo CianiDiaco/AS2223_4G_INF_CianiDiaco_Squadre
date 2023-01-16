@@ -18,7 +18,9 @@ namespace UnitTest
         [Test]
         public void AddCaptain()
         {
-            // TODO U.2
+            Team team = new Team("Squadra 1");
+            Assert.That(team.AddCaptain(new Player("Cognome 1", "Nome 1", Player.ERole.Rosa)), IS.True);
+            Assert.That(team.AddCaptain(new Player("Cognome 1", "Nome 1", Player.ERole.Riserva)), Is.False);
         }
     }
 }
