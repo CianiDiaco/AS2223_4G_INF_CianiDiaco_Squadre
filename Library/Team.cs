@@ -28,7 +28,7 @@ namespace Library
 
         public Team(string name)
         {
-            // TODO T.1
+            
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Library
         /// <returns>True if captain has been setted</returns>
         public bool AddCaptain(Player captain)
         {
-            // TODO T.3
+            captain = ;
         }
 
         /// <summary>
