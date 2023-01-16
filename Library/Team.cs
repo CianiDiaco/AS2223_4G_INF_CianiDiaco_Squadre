@@ -28,7 +28,7 @@ namespace Library
 
         public Team(string name)
         {
-            
+            this.name = name;   
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Library
         /// <returns>True if player has been inserted</returns>
         public bool AddPlayer(Player player)
         {
-            // TODO T.2
+            
         }
 
         /// <summary>
@@ -52,7 +52,15 @@ namespace Library
         /// <returns>True if captain has been setted</returns>
         public bool AddCaptain(Player captain)
         {
-            captain = ;
+            if (captain.Role == 0)
+            {
+                this.captain = captain;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -61,7 +69,7 @@ namespace Library
         /// <returns></returns>
         public string GetPlayers()
         {
-            // TODO T.4
+            
         }
 
         public string Name { get { return name; } }
