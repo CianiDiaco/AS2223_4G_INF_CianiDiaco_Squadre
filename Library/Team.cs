@@ -69,7 +69,12 @@ namespace Library
         /// <returns></returns>
         public string GetPlayers()
         {
-            
+            string playerList = "";
+            foreach (Player player in players) 
+            {
+                playerList += $"Giocatore: {player.Description()} - Ruolo: {player.Role()}";
+            }
+            return playerList;
         }
 
         public string Name { get { return name; } }

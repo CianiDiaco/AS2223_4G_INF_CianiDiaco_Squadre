@@ -25,7 +25,7 @@ namespace Library
             return $"{surname} {name} {role}";
         }
 
-        public ERole Role { get; set; }
+        public ERole Role { get; }
         }
 
     }
