@@ -17,16 +17,15 @@ namespace Library
         {
             this.name = name;
             this.surname = surname;
-
+            this.role = role;
         }
 
         public string Description()
         {
-            // TODO P.2
+            return $"{surname} {name} {role}";
         }
 
-        public ERole Role { 
-            // TODO P.3
+        public ERole Role { get; set; }
         }
 
     }
